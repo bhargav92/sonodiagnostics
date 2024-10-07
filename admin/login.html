@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Sono Diagnostics, Medical Diagnostics" />
+    <meta name="description" content="Sono Dagnostics " />
+    <meta name="author" content="https://www.themetechmount.com/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2" />
+    <title>Login - Sono Diagnostics</title>
+
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+
+    <!-- animate -->
+    <link rel="stylesheet" type="text/css" href="../css/animate.css" />
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+
+    <!-- shortcodes -->
+    <link rel="stylesheet" type="text/css" href="../css/shortcodes.css" />
+
+    <!-- main -->
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+
+    <!-- responsive -->
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css" />
+
+    <link rel="stylesheet" type="text/css" href="../css/custom.css" />
+
+    <style>
+        .h-100vh{
+            height: 100vh;
+        }
+
+        .login-main{
+            background-image: url(../images/login-bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+            position: relative;
+        }
+
+        .login-main:before{
+            content: '';
+            background-color: #00000069;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--page start-->
+    <div class="page">        
+        <div class="login-main">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-12 col-sm-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+                        <div class="d-flex align-items-center justify-content-center flex-column h-100vh">
+                            <div class="bg-white p-4 rounded-lg w-100">
+                                <div class="text-center mb-4">
+                                    <img src="../images/logo-2.png" alt="" class="img-fluid" width="200">
+                                </div>
+                                <h4 class="text-dark text-center">Login</h4>
+                                <form action="#">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="form_control_1" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="form_control_2" placeholder="Password">
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-success btn-block" id="map_show">Login</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- page end -->
+
+
+    <!-- Javascript -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Javascript end-->
+
+    <script>
+        $(document).ready(function(){
+            $("#map_show").click(function(){
+                var userName=$("#form_control_1").val();
+                var password=$("#form_control_2").val();
+                if(userName=='admin'&&password=='admin123'){                   
+                    window.location.href = "admin.html";
+                }
+                else{
+                    alert('Please enter correct User Name or Password');
+                }
+            });
+        });
+
+
+        $("#form_control_2").on("keydown", function(e) {
+            if (e.keyCode == 13) {
+            e.preventDefault();
+            $("#map_show").click();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
